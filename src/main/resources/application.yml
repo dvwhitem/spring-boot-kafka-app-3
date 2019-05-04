@@ -1,0 +1,21 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: app3
+      auto-offset-reset: earliest
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.dv.springbootkafkaapp3
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+app:
+  topic:
+    name: kafka.app3
+
+
+
